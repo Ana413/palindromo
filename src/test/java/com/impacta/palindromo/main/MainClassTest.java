@@ -1,5 +1,6 @@
 package com.impacta.palindromo.main;
 
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
 import org.junit.Test;
@@ -16,16 +17,20 @@ public class MainClassTest {
 	
 	@Test
 	public void deveRetornarPalindromoVerdadeiro() {
-		mainClass.validPolindromo("rotator");
+		boolean retorno = mainClass.validPolindromo("rotator");
+		
+		assertEquals(true, retorno);
 	}
 	
 	@Test
 	public void deveRetornarPalindromoFalso() {
-		mainClass.validPolindromo("elephant");
+		boolean retorno = mainClass.validPolindromo("elephant");
+		assertEquals(false, retorno);
 	}
 	
 	@Test
 	public void deveRetornarPalavraEmpty() {
-		mainClass.validPolindromo("");
+		boolean retorno = mainClass.validPolindromo("");
+		assertEquals(false, retorno);
 	}
 }
